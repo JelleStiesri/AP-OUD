@@ -13,10 +13,17 @@ public class Bezoeker {
         return saldo;
     }
 
+    public Drankje getDrankje(){
+        return drankje;
+    }
+
+    public Ticket getTicket(){
+        return ticket;
+    }
+
     public void removeSaldo(Double bedrag) {
         this.saldo -= bedrag;
     }
-
 
     public void setDrankje(Drankje drankje){
         this.drankje = drankje;

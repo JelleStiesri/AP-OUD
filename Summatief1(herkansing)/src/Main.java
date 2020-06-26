@@ -4,7 +4,7 @@ public class Main {
         Zaal zaal1 = new Zaal("Blauwe zaal", 200, bios1);
 
         Bezoeker b1 = new Bezoeker("Klaas", 250.20);
-        Bezoeker b2 = new Bezoeker("Piet", 20.20);
+        Bezoeker b2 = new Bezoeker("Piet", 14.20);
 
         System.out.println("\nTest Drankjes:");
         Drankje Cola = new Drankje("Cola", 2.30);
@@ -16,13 +16,35 @@ public class Main {
         bar.addDrankje(Thee, 10);
 
         bar.koopDrankje(b1, Cola);
-        bar.koopDrankje(b2, Cola);
+        System.out.println("Drankje Bezoeker 1: "+b1.getDrankje());
+        bar.koopDrankje(b2, Fanta);
+        System.out.println("Drankje Bezoeker 2: "+b2.getDrankje()); // Error want Fanta niet op voorraad
+        bar.koopDrankje(b2, Thee);
+        System.out.println("Drankje Bezoeker 2: "+b2.getDrankje());
 
         System.out.println("\nTest Tickets:");
          //MAAK FILMS EN TICKETS AAN
+        Film film1 = new Film("Jantje's gekke avonturen", 120, 11.00);
+        System.out.println(film1.getLengte() + film1.getNaam() + film1.getPrice());
+
+        Ticket ticket1= new Ticket("Ticket 'Jantje's gekke avonturen' - Normaal", film1, false);
+        System.out.println(ticket1.getNaam() + ticket1.getFilm() + ticket1.getPrijs());
+
+        Ticket ticket2= new Ticket("Ticket 'Jantje's gekke avonturen' - Luxe", film1, true);
+        System.out.println(ticket2.getNaam() + ticket2.getFilm() + ticket2.getPrijs());
+
+        //Vul kassa aan met tickets
         Kassa kassa = new Kassa(bios1, 1239.10);
+        kassa.addTicket(ticket1, 100);
+        kassa.addTicket(ticket2, 10);
 
+        System.out.println(b1.getSaldo() + " " + b2.getSaldo());
 
+        //Laat bezoeker ticket kopen
+        kassa.koopTicket(b2, ticket2); // Saldo bezoeker < prijs ticket --> foutmelding
+        System.out.println(b2.getTicket());
+        kassa.koopTicket(b2, ticket1); // Saldo bezoeker > prijs ticket --> geslaagde koop
+        System.out.println(b2.getTicket());
 //
 //        Zaal zaal1 = new Zaal("Blauwe zaal", 200, bios1);
 //        System.out.println("Bioscoop: " + bios1.toString());

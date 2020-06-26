@@ -2,6 +2,7 @@ public class Ticket implements Item{
     private String naam;
     private Film film;
     private double prijs;
+    private Bezoeker bezoeker;
 
     public Ticket(String naam, Film film, boolean luxe) {
         this.naam = naam;
@@ -11,6 +12,10 @@ public class Ticket implements Item{
         }else {
             this.prijs = film.getPrice() * 1.5;
         }
+    }
+
+    public void setBezoeker(){
+        this.bezoeker = bezoeker;
     }
 
     public Film getFilm() {
@@ -24,6 +29,10 @@ public class Ticket implements Item{
 
     @Override
     public String getNaam() {
+        return naam;
+    }
+
+    public String toString() {
         return naam;
     }
 

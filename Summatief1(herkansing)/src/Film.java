@@ -1,7 +1,7 @@
 public class Film {
     private String naam;
     private int lengte;
-    private Double prijs; // Baisprijs
+    private Double prijs; // Basisprijs
 
     public Film(String nM, int len, Double prijs){
         this.naam = nM;
@@ -18,6 +18,10 @@ public class Film {
     }
 
     public String getNaam(){
+        return naam;
+    }
+
+    public String toString() {
         return naam;
     }
 }
