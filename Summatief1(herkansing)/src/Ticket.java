@@ -16,7 +16,7 @@ public class Ticket implements Item{
         }
     }
 
-    public void setBezoeker(){
+    public void setBezoeker(Bezoeker bezoeker){
         this.bezoeker = bezoeker;
     }
 
@@ -41,6 +41,5 @@ public class Ticket implements Item{
     public String toString() {
         return naam;
     }
-
 
 }

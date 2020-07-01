@@ -13,12 +13,12 @@ public class Stoel {
         this.ticket=ticket;
     }
 
-    public Bezoeker getPersoon(){
-        return persoon;
-    }
-
     public void setPersoon(Bezoeker persoon) {
         this.persoon=persoon;
+    }
+
+    public Bezoeker getPersoon(){
+        return persoon;
     }
 
     public String toString() {

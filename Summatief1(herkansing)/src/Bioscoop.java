@@ -2,9 +2,9 @@ public class Bioscoop {
     private String naam;
     private String adres;
 
-    public Bioscoop(String nM, String aD) {
-        this.naam = nM;
-        this.adres = aD;
+    public Bioscoop(String naam, String adres) {
+        this.naam = naam;
+        this.adres = adres;
     }
 
     public String toString() {

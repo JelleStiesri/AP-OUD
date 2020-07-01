@@ -5,9 +5,22 @@ public class Bezoeker {
     private Drankje drankje;
     private Stoel stoel;
 
-    public Bezoeker(String nM, Double saldo) {
-        this.naam = nM;
+    public Bezoeker(String naam, Double saldo) {
+        this.naam = naam;
         this.saldo = saldo;
+    }
+
+    public void setDrankje(Drankje drankje){
+        this.drankje = drankje;
+    }
+
+    public void setTicket(Ticket ticket) {
+        this.ticket = ticket;
+        this.stoel = ticket.getStoel();
+    }
+
+    public void removeSaldo(Double bedrag) {
+        this.saldo -= bedrag;
     }
 
     public Double getSaldo(){
@@ -20,19 +33,6 @@ public class Bezoeker {
 
     public Ticket getTicket(){
         return ticket;
-    }
-
-    public void removeSaldo(Double bedrag) {
-        this.saldo -= bedrag;
-    }
-
-    public void setDrankje(Drankje drankje){
-        this.drankje = drankje;
-    }
-
-    public void setTicket(Ticket ticket) {
-        this.ticket = ticket;
-        this.stoel = ticket.getStoel();
     }
 
     public String toString(){

@@ -5,8 +5,8 @@ public class Kassa {
     Bioscoop bioscoop;
     Double saldo;
 
-    public Kassa(Bioscoop bios, Double saldo) {
-        this.bioscoop = bios;
+    public Kassa(Bioscoop bioscoop, Double saldo) {
+        this.bioscoop = bioscoop;
         this.saldo = saldo;
     }
 

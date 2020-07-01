@@ -13,6 +13,7 @@ public class Bar{
     public void addDrankje(Drankje drankje, Integer aantal) {
         drankjes.put(drankje,aantal);
 }
+
     public void koopDrankje(Bezoeker klant, Drankje drankje){
         Double prijs = drankje.getPrijs();
         if (drankjes.get(drankje) == null || drankjes.get(drankje) == 0) { // Voorraad check

@@ -1,35 +1,34 @@
 import java.util.*;
 
 public class Zaal{
-    private String zaalnaam;
+    private String zaalNaam;
     private ArrayList<Stoel> stoelen = new ArrayList<>();
-    private Bioscoop bios;
+    private Bioscoop bioscoop;
     private Film film;
-    private double filmprijs;
+    private double filmPrijs;
 
-    public Zaal(String zaalnaam, Bioscoop bios) {
-        this.zaalnaam = zaalnaam;
-        this.bios = bios;
+    public Zaal(String zaalNaam, Bioscoop bioscoop) {
+        this.zaalNaam = zaalNaam;
+        this.bioscoop = bioscoop;
     }
 
     public void setFilm(Film film) {
         this.film = film;
-        this.filmprijs = film.getPrijs();
+        this.filmPrijs = film.getPrijs();
     }
 
     public void addStoel(Stoel stoel){
         stoelen.add(stoel);
     }
 
-    public double getFilmprijs() {
-        return filmprijs;
+    public double getFilmPrijs() {
+        return filmPrijs;
     }
 
     public String getZaalnaam(){
-        return zaalnaam;
+        return zaalNaam;
     }
-
-    @Override
+    
     public String toString() {
         return String.format("Film: '%s' - Lengte: %s minuten", film.getNaam(), film.getLengte());
     }
