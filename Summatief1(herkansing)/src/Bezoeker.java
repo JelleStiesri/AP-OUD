@@ -3,6 +3,7 @@ public class Bezoeker {
     private Ticket ticket;
     private Double saldo;
     private Drankje drankje;
+    private Stoel stoel;
 
     public Bezoeker(String nM, Double saldo) {
         this.naam = nM;
@@ -31,10 +32,9 @@ public class Bezoeker {
 
     public void setTicket(Ticket ticket) {
         this.ticket = ticket;
+        this.stoel = ticket.getStoel();
     }
 
-
-    @Override
     public String toString(){
         return naam;
     }

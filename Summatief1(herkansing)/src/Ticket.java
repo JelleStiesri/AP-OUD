@@ -3,14 +3,16 @@ public class Ticket implements Item{
     private Film film;
     private double prijs;
     private Bezoeker bezoeker;
+    private Stoel stoel;
 
-    public Ticket(String naam, Film film, boolean luxe) {
+    public Ticket(String naam, Film film, Stoel stoel, boolean luxe) {
         this.naam = naam;
         this.film = film;
+        this.stoel=stoel;
         if (!luxe) {
-            this.prijs = film.getPrice();
+            this.prijs = film.getPrijs();
         }else {
-            this.prijs = film.getPrice() * 1.5;
+            this.prijs = film.getPrijs() * 1.5;
         }
     }
 
@@ -20,6 +22,10 @@ public class Ticket implements Item{
 
     public Film getFilm() {
         return film;
+    }
+
+    public Stoel getStoel() {
+        return stoel;
     }
 
     @Override

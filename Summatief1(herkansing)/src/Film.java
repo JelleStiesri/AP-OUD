@@ -9,7 +9,7 @@ public class Film {
         this.prijs = prijs;
     }
 
-    public double getPrice() {
+    public double getPrijs() {
         return prijs;
     }
 

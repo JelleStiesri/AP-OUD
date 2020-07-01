@@ -27,6 +27,8 @@ public class Kassa {
                 System.out.println("\nBetaling afgerond");
                 tickets.replace(ticket,tickets.get(ticket)-1); // Vooraadcorrectie
                 klant.setTicket(ticket);
+                Stoel stoel = ticket.getStoel();
+                stoel.setPersoon(klant);
             }
         }
     }

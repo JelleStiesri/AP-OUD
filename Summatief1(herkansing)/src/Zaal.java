@@ -1,19 +1,24 @@
+import java.util.*;
+
 public class Zaal{
     private String zaalnaam;
-    private int stoelen;
+    private ArrayList<Stoel> stoelen = new ArrayList<>();
     private Bioscoop bios;
     private Film film;
     private double filmprijs;
 
-    public Zaal(String nM, int St, Bioscoop bs) {
-        this.zaalnaam = nM;
-        this.stoelen = St;
-        this.bios = bs;
+    public Zaal(String zaalnaam, Bioscoop bios) {
+        this.zaalnaam = zaalnaam;
+        this.bios = bios;
     }
 
-    public void setFilm(Film fm) {
-        this.film = fm;
-        this.filmprijs = fm.getPrice();
+    public void setFilm(Film film) {
+        this.film = film;
+        this.filmprijs = film.getPrijs();
+    }
+
+    public void addStoel(Stoel stoel){
+        stoelen.add(stoel);
     }
 
     public double getFilmprijs() {
