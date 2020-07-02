@@ -27,6 +27,7 @@ public class Kassa implements Winkel{
                 System.out.println("\nBetaling afgerond");
                 tickets.replace(ticket,tickets.get(ticket)-1); // Vooraadcorrectie
                 klant.setTicket(ticket);
+                ticket.setBezoeker(klant);
                 Stoel stoel = ticket.getStoel();
                 stoel.setPersoon(klant);
             }

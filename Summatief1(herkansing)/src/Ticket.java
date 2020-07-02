@@ -9,6 +9,7 @@ public class Ticket implements Item{
         this.naam = naam;
         this.film = film;
         this.stoel=stoel;
+
         if (!luxe) {
             this.prijs = film.getPrijs();
         }else {
