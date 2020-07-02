@@ -8,6 +8,11 @@
 - Item interface
 - Winkel interface
 
+====================
+
+
 - Functies netter & overzichtelijker gemaakt
 - Namen netter gemaakt
 - UML gefixt
+- Eigen git repo
+- Betere git indeling
