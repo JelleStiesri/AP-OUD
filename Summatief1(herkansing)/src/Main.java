@@ -19,11 +19,12 @@ public class Main {
         bar.addDrankje(Thee, 10);
 
         bar.koopDrankje(b1, Cola);
-        System.out.println("Drankje Bezoeker 1: "+b1.getDrankje());
+        bar.koopDrankje(b1, Thee);
+        System.out.println("Drankjes Bezoeker 1: "+b1.getDrankje());
         bar.koopDrankje(b2, Fanta);
-        System.out.println("Drankje Bezoeker 2: "+b2.getDrankje()); // Error want Fanta niet op voorraad
+        System.out.println("Drankjes Bezoeker 2: "+b2.getDrankje()); // Error want Fanta niet op voorraad
         bar.koopDrankje(b2, Thee);
-        System.out.println("Drankje Bezoeker 2: "+b2.getDrankje());
+        System.out.println("Drankjes Bezoeker 2: "+b2.getDrankje());
 
 
         System.out.println("\n===================\nTest Tickets:\n");
@@ -33,9 +34,11 @@ public class Main {
         Film film1 = new Film("Jantje's gekke avonturen", 120, 11.00);
         System.out.println("\n"+ film1.getLengte() + " minuten - " + film1.getNaam() + " " + film1.getPrijs() + " - Euro");
 
-        Stoel stoel1 = new Stoel("1", zaal1);
+        Stoel stoel1 = new Stoel("1");
+        stoel1.setZaal(zaal1);
         zaal1.addStoel(stoel1); // Voegt stoel toe aan zaal
-        Stoel stoel2 = new Stoel("2", zaal1);
+        Stoel stoel2 = new Stoel("2");
+        stoel2.setZaal(zaal1);
         zaal1.addStoel(stoel2);
 
         Ticket ticket1= new Ticket("Ticket 'Jantje's gekke avonturen' - Normaal", film1, stoel1, false);

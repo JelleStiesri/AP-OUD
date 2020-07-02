@@ -1,8 +1,10 @@
+import java.util.*;
+
 public class Bezoeker {
     private String naam;
     private Ticket ticket;
     private Double saldo;
-    private Drankje drankje;
+    private ArrayList<Drankje> drankjes = new ArrayList<>();
     private Stoel stoel;
 
     public Bezoeker(String naam, Double saldo) {
@@ -10,8 +12,8 @@ public class Bezoeker {
         this.saldo = saldo;
     }
 
-    public void setDrankje(Drankje drankje){
-        this.drankje = drankje;
+    public void addDrankje(Drankje drankje){
+        drankjes.add(drankje);
     }
 
     public void setTicket(Ticket ticket) {
@@ -27,8 +29,8 @@ public class Bezoeker {
         return saldo;
     }
 
-    public Drankje getDrankje(){
-        return drankje;
+    public ArrayList<Drankje> getDrankje(){
+        return drankjes;
     }
 
     public Ticket getTicket(){

@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Kassa {
+public class Kassa implements Winkel{
     HashMap<Ticket, Integer> tickets = new HashMap<>();
     Bioscoop bioscoop;
     Double saldo;
@@ -23,7 +23,7 @@ public class Kassa {
                 System.out.println("\nSaldo klant te laag");
             }else{
                 klant.removeSaldo(prijs); // Bedrag word afgeschreven bij klant
-                saldo += prijs; // Bedrag word bijgeschreven bij bar
+                addSaldo(prijs); // Bedrag word bijgeschreven bij bar
                 System.out.println("\nBetaling afgerond");
                 tickets.replace(ticket,tickets.get(ticket)-1); // Vooraadcorrectie
                 klant.setTicket(ticket);
@@ -31,5 +31,20 @@ public class Kassa {
                 stoel.setPersoon(klant);
             }
         }
+    }
+
+    @Override
+    public void addSaldo(Double bedrag){
+        this.saldo += bedrag;
+    }
+
+    @Override
+    public void removeSaldo(Double bedrag){
+        this.saldo -= bedrag;
+    }
+
+    @Override
+    public Double getSaldo(){
+        return saldo;
     }
 }
