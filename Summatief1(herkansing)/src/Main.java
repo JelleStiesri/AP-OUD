@@ -32,6 +32,7 @@ public class Main {
         System.out.println("Saldo Bezoeker 2: " + b2.getSaldo());
         //MAAK FILMS, STOELEN EN TICKETS AAN
         Film film1 = new Film("Jantje's gekke avonturen", 120, 11.00);
+        zaal1.setFilm(film1);
         System.out.println("\n"+ film1.getLengte() + " minuten - " + film1.getNaam() + " " + film1.getPrijs() + " - Euro");
 
         Stoel stoel1 = new Stoel("1");
